@@ -1,0 +1,819 @@
+/* 
+ORDRE DU CSS (crtl+f)
+Mobile first :
+- mini reset et définitions des génériques
+- Header
+  - Petite bande grise
+  - Grand bandeau bleu
+  - Menu burger
+- Index
+  - Header index
+  - Corps de page index
+- Footer
+  - Footer bleu principal
+  - Footer copyright
+- Actualités
+- Contact
+  - Formulaire de contact
+  - Nous trouver
+  - Map
+
+Media queries :
+1- min 769px
+2- min 993px
+3- min 1201px
+*/
+
+:root{
+  --gris-anthracite:#5B6269;
+  --bleu-teal:rgb(34, 177, 170);
+}
+
+/*---- mini reset----- */
+*{
+  margin:0;
+  padding:0;
+}
+
+a{
+  text-decoration:none;
+  color:#FFF;
+  position:relative;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+a.lienres span.infobulle{
+  display: none;
+}
+
+li{
+  list-style-type: none;
+}
+
+p{
+  margin-bottom: 15px;
+}
+
+body{
+  width: 100%;
+  font-family: 'quicksandregular', sans-serif;
+  font-size:14px;
+  color: var(--gris-anthracite);
+}
+
+.container{
+  width:90%;
+  margin:0 auto;
+}
+
+.bouton{
+  margin:0 auto;
+}
+
+.bouton a{
+  color: var(--bleu-teal);
+  background-color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  padding:5px 15px;
+  border-radius: 3px;
+  box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.3);
+}
+
+.bouton a:hover{
+  box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.5);
+}
+
+@font-face {
+  font-family: 'action_manbold';
+  src: url('fonts/Action_Man_Bold-webfont.eot');
+  src: url('fonts/Action_Man_Bold-webfont.woff') format('woff'),
+       url('fonts/Action_Man_Bold-webfont.svg#action_manbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'quicksandregular';
+  src: url('fonts/quicksand-regular-webfont.woff2') format('woff2'),
+       url('fonts/quicksand-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ---------HEADER-------- */
+#header-top{ /*le header entier est fixe*/
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 1px solid white;
+}
+
+/* Petite bande grise */
+#header-top #top-gris{
+  height: 40px;
+  background-color: var(--gris-anthracite);
+}
+
+#header-top #top-gris ul{
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#header-top #top-gris ul li{
+  margin-right: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+#header-top #top-gris ul li:last-child{
+  margin: 0;
+}
+
+#header-top #top-gris ul li i{
+  background-color: white;
+  color: var(--bleu-teal);
+  border-radius: 50%;
+  height:28px;
+  width: 28px;
+  line-height: 28px;
+}
+
+/* Grand bandeau bleu avec logo + nom + nav */
+#header-top #bandeau-header{
+  height: 100px;
+  background-color:var(--bleu-teal);
+}
+
+#header-top #bandeau-header .name{ /*logo + nom*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#header-top #bandeau-header img.logo{ /*logo*/
+  width: 60px;
+  margin: 10px 0;
+  border-radius: 50%;
+  border: solid 2px white;
+  background-color: white;
+}
+
+#header-top #bandeau-header h1{ /*nom*/
+  font-family: 'action_manbold';
+  padding-left: 10px;
+  color: white;
+  font-size: 2.9rem;
+}
+
+#bouton-top{ /*bouton pour revenir en haut de chaque page*/
+  position:fixed;
+  right: 1%;
+  top: 70%;
+  z-index: 1000000000000000;
+}
+
+a.back-to-top{
+  font-size: 2rem;
+  color: var(--gris-anthracite);
+}
+
+/* ----MENU BURGER---- */
+#header-top #bandeau-header #menu-flex{ /*En portable et tablette, le menu normal n'apparaît pas*/
+  display: none;
+}
+
+#header-top #bandeau-header #menuprincipal #burger{ /*icône menu burger*/
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+  font-size: 3rem;
+  cursor: pointer;
+  user-select: none;
+  color: white;
+  z-index: 10;
+}
+
+#header-top #bandeau-header #menuprincipal #burger.actif + #menu {
+  left: 0;
+}
+
+#header-top #bandeau-header #menuprincipal #menu{ /*le menu qui apparaît, sur fond gris*/
+  overflow: hidden; /*pas d'espace entre le menu et le bandeau nav*/
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  background: var(--gris-anthracite);
+  height: 400px;
+  width: 100%;
+  z-index: 10000;
+}
+
+#header-top #bandeau-header #menuprincipal #menu ul{
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 80%;
+  max-height: 450px;
+  margin-top:20px;
+}
+
+#menu{
+  display: none !important;
+}
+
+#menu.active{
+  display: block !important;
+}
+
+
+/* ----------INDEX------------- */
+/* ----Header index = s'applique à chaque page du site. Seule l'image du background-image est modifiée---- */
+
+#bandeau-couleur{
+  color: white;
+}
+
+#bandeau-couleur #bandeau-index{ /*image du background modifiée, unique à chaque page*/
+  background-image:linear-gradient(rgba(34, 177, 170, 0.8), rgba(34, 177, 170, 0.6)), url(images/vente-crabe-lomener.jpg);
+  max-width: 100%;
+  height: 500px;
+  background-position: bottom 50% left 50%;
+  background-size: cover;
+}
+
+#bandeau-couleur h2{ /*titre de la page*/
+  font-size: 3rem;
+  padding:5% 5% 0;
+}
+
+#bandeau-couleur h2 .italic{ /*Nom de l'association mis en avant*/
+  font-size: 4rem;
+  font-style: italic;
+}
+
+#bandeau-couleur h3{ /*sous-titre / description de la page*/
+  font-size: 1.5rem;
+  padding:5% 5% 0;
+}
+
+/* ----Corps de page index---- */
+#bienvenue h4{
+  font-size: 2rem;
+  padding:15px 0;
+  color: var(--bleu-teal);
+}
+
+#bienvenue p{
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+}
+
+#bienvenue p strong{ /*mise en avant de certaines informations*/
+  color: var(--bleu-teal);
+}
+
+#bienvenue figure{ /*l'image d'illustration n'apparaît pas*/
+  display: none;
+}
+
+#bienvenue img:hover{
+  box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.6);
+}
+
+/* ------FOOTER------ */
+/* Footer bleu principal */
+#pied{
+  width: 100%;
+  background-color: var(--bleu-teal);
+  margin-top: 40px;
+}
+
+#pied #contenu-bas{
+  color: white;
+}
+
+#pied #contenu-bas .bande{ /*En portable et tablette, cette décoration n'apparaît pas*/
+  display: none;
+}
+
+#pied #contenu-bas .name{ /*logo + nom*/
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#pied #contenu-bas .name img{
+  width: 60px;
+  margin: 10px 0;
+  border-radius: 50%;
+  border: solid 2px white;
+  background-color: white;
+}
+
+#pied #contenu-bas .name h1{
+  font-family: 'action_manbold';
+  padding-left: 10px;
+  color: white;
+  font-size: 2.9rem;
+}
+
+#pied #contenu-bas #social ul{ /*En portable et tablette, les réseaux sociaux n'apparaissent pas*/
+  display: none;
+}
+
+#pied #contenu-bas #adresse{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#pied #contenu-bas #adresse h4{
+  font-size: 1.9rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  margin-bottom: 5px;
+}
+
+#pied #contenu-bas #adresse address{
+  font-style:normal;
+  font-size: 1.3rem;
+}
+
+#pied #contenu-bas h5{ /*n° téléphone*/
+  font-size: 1.2rem;
+  padding-top:20px;
+}
+
+#pied #contenu-bas #adresse p{ /*bouton Contact*/
+  margin-top:20px;
+}
+
+/* Footer copyright */
+#pied #copyright{
+  background-color: var(--gris-anthracite);
+  color: white;
+  text-align: center;
+}
+
+#pied #copyright li{ /*Un lien du Copyright par ligne*/
+  width: 65%;
+  margin:0 auto;
+  font-size: 1rem;
+  font-weight: bold;
+  border-bottom: 1px solid white;
+  padding: 10px 0;
+}
+
+#pied #copyright li:last-child{
+  border-bottom: none;
+}
+
+
+/* ------ACTUALITES------ */
+#bandeau-couleur #bandeau-actu{
+  background-image:linear-gradient(rgba(34, 177, 170, 0.8), rgba(34, 177, 170, 0.6)), url(images/lomener-port.jpg);
+  max-width: 100%;
+  height: 400px;
+  background-position: bottom 50% left 0;
+  background-size: cover;
+}
+
+#categories{ /*menu des catégories d'articles*/
+  width: 100%;
+}
+
+#menucategories ul{
+  display:flex;
+  flex-wrap: wrap;
+  width:100%;
+  justify-content:center;
+}
+#menucategories ul li{
+  margin:20px 15px 10px;
+  font-size: 1.4rem;
+}
+#menucategories ul li a{
+  background-color:var(--bleu-teal);
+  padding:5px 15px;
+  border-radius:3px;
+}
+#menucategories ul li a.cat{ /*la catégorie qui est sélectionnée*/
+  background-color:var(--gris-anthracite);
+  border-radius:3px;
+  text-decoration: underline;
+}
+
+#lesposts .post{/*liste des articles du blog + article en pleine page pour les portables et tablettes*/
+  background-color: var(--gris-anthracite);
+  opacity: 0.8;
+  width: 100%;
+  border-radius: 20px;
+  color:white;
+  margin: 20px 0;
+  box-shadow: 0px 0px 10px #16181a;
+}
+
+#lesposts .imgsize{ /*figure qui comporte la photo de l'article*/
+  width: 80%;
+  padding-top:30px;
+  margin: 0 auto;
+}
+
+#lesposts .imgsize img{
+  display: block;
+  max-width:100%;
+  max-height:405px;
+  margin: 0 auto;
+  border: 1px solid white;
+}
+
+#lesposts .text-post{
+  width:80%;
+  margin:0 auto;
+  padding-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+#lesposts h2{
+  padding-top:15px;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+#lesposts .text-post time{ /*date de publication*/
+  color: var(--bleu-teal);
+  font-weight: bold;
+}
+
+#lesposts .post .text-post a { /*boutons +d'info */
+  background-color:var(--bleu-teal);
+  color:white;
+  display:block;
+  padding:6px 20px;
+  width:100px;
+  margin:15px auto;
+  border-radius:3px;
+  text-align: center;
+  box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.3);
+}
+
+#lesposts .retour{ /*bouton Retour dans les pages de chaque article*/
+  width: 100px;
+  background-color: var(--bleu-teal);
+  color: var(--gris-anthracite);
+  font-weight: bold;
+  font-size:1.3rem;
+  text-align: center;
+  margin-top: 20px;
+  padding: 8px 10px;
+  border-radius: 3px;
+}
+
+/* ------CONTACT------ */
+#bandeau-couleur #bandeau-contact{
+  background-image:linear-gradient(rgba(34, 177, 170, 0.8), rgba(34, 177, 170, 0.6)), url(images/femmes-tricot.jpg);
+  max-width: 100%;
+  height: 400px;
+  background-position: 0 15%;
+  background-size: cover;
+}
+
+#contact{
+  margin-top:20px;
+}
+
+/* Formulaire de contact */
+#contact #message{
+  margin-bottom: 20px;
+}
+
+#contact #message h4{
+  margin-top: 10px;
+  font-size: 1.6rem;
+}
+
+#contact #message p{
+  font-size: 1.5rem;
+  margin-top:5px;
+}
+
+#contact #message input{ /*les zones à remplir*/
+  padding:7px;
+  font-size: 1rem;
+  margin-left: 20px;
+}
+
+#contact #message .required{ /*les astérix obligatoires*/
+  color:red;
+  font-size: 1.6rem;
+}
+
+#contact #message input:focus{ /*la zone de formulaire qui est sélectionnée*/
+  box-shadow: 0px 0px 5px var(--bleu-teal) inset;
+}
+
+#contact #message li{ /*les checkbox avec les moyens de contact*/
+  text-align: left;
+  padding:7px 0;
+  font-size: 1.3rem;
+}
+
+#contact #message .votre-message{
+  padding-top:12px;}
+
+#contact #message textarea{ /*la zone de texte pour le message*/
+  width:90%;
+  padding:7px;
+  margin: 10px 0 10px;
+  height: 150px;
+  font-size: 1rem;
+}
+
+#contact #message .rgpd{
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+#contact #message .rgpd a{
+  color: var(--bleu-teal)
+}
+
+#contact #message .effacer{ /*bouton reset du formulaire*/
+  background-color: var(--gris-anthracite);
+  border:none;
+  vertical-align: middle;
+  width: 70px;
+  margin-left: 60px;
+  color:white;
+  margin-top:20px;
+}
+
+#contact #message .envoyer{ /*bouton envoyer du formulaire*/
+  background-color: var(--bleu-teal);
+  border: none;
+  font-size: 1.3rem;
+  text-align: center;
+  vertical-align: middle;
+  width: 90px;
+  color: white;
+  margin-top:20px;
+}
+
+/* Nous trouver */
+#contact #nous-trouver{
+  background-color: var(--gris-anthracite);
+  opacity: 0.8;
+  color:white;
+  margin:auto 0;
+  text-align: center;
+}
+
+#contact #nous-trouver h4{
+  font-size: 1.6rem;
+  padding-top:15px;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  margin-bottom: 10px;
+}
+
+#contact #nous-trouver address{
+  font-style:normal;
+  font-size: 1.3rem;
+}
+
+#contact #nous-trouver h5{
+  font-size: 1.2rem;
+  padding-top:20px;
+}
+
+/* Map */
+#contact #carte{ /*le cadre gris qui entoure la carte*/
+  padding:20px 20px;
+  background-color:var(--gris-anthracite);
+  opacity: 0.8;
+  border-radius: 0 0 15px 15px;
+}
+
+#contact #carte .map{ /*la carte Google Maps*/
+  width: 90%;
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid var(--gris-anthracite);
+}
+
+
+/* ------MEDIA QUERIES------ */
+/* N° 1*/
+@media screen and (min-width:769px){
+  .container{
+    width:80%;
+    margin:0 auto;
+  }
+
+  /* ------FOOTER------- */
+  /* Footer bleu principal */
+  #pied #contenu-bas{ /*le footer se répartie en 2 colonnes*/
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding:20px 0 30px;
+  }
+
+  #pied #contenu-bas #social ul{ /*ajout des réseaux sociaux dans le footer*/
+    display: block;
+    display: flex;
+    justify-content: center;
+  }
+
+  #pied #contenu-bas #social ul i{
+    font-size: 1.4rem;
+    background-color: white;
+    color: var(--bleu-teal);
+    border-radius: 50%;
+    height:50px;
+    width: 50px;
+    margin: 0 10px 25px;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  #pied #contenu-bas #adresse{
+    margin-bottom:0;
+  }
+
+  /* Footer Copyright */
+  #pied #copyright ul{ /*le bandeau Copyright se répartie sur une seule ligne*/
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #pied #copyright li{
+    border-bottom: none;
+    border-right: 1px solid white;
+    padding: 10px 0;
+  }
+
+  #pied #copyright li:last-child{
+    border-right: none;
+  }
+
+  /* ------CONTACT------ */
+  #contact #message .row-contact{ /*le formulaire de contact s'affiche en 2 colonnes*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  #contact #message ul{ /*les moyens de contact s'affichent sur une seule ligne*/
+    display: flex;
+  }
+  
+}
+
+/* N° 2*/
+@media screen and (min-width:993px){ 
+
+  .container{
+    width:80%; /*à modifier*/
+    margin:0 auto;
+  }
+
+  /* infobulles */
+  a.lienres:hover span.infobulle{
+    font-family: 'quicksandregular', sans-serif;
+    display: inline-block;
+    color: var(--gris-anthracite);
+    font-size: 0.8rem;
+    text-align: center;
+    position:absolute;
+    top:30px;
+    left: -20%;
+    background-color: white;
+    padding:0 6px;
+    margin-top: 10px;
+    border-radius: 5px;
+    line-height: 28px;
+  }
+  
+  /* ------HEADER------ */
+  #header-top #bandeau-header{
+    height: 150px; /*le bandeau nav est légèrement plus long car parfois retour à la ligne du menu*/
+  }
+
+  /* remplacement du menu burger */
+  #header-top #bandeau-header #menuprincipal{ /*le menu burger disparaît*/
+    display: none;
+  }
+
+  #header-top #bandeau-header #menu-flex{ /* le menu normal apparaît */
+    display: block;
+  }
+
+  #header-top #bandeau-header #menu-flex ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  #header-top #bandeau-header #menu-flex ul li{
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: 10px;
+    text-align: center;
+  }
+
+  /* ------INDEX------ */
+  #bienvenue figure{ /*une image d'illustration est ajoutée en page d'accueil*/
+    display: block;
+    width: 60%;
+    margin:40px auto 20px;
+  }
+
+  #bienvenue figure img{
+    width: 100%;
+    border-radius: 100px;
+  }
+
+  #bienvenue figure figcaption{
+    text-align: center;
+    font-size: 1.2rem;
+    font-style: italic;
+    padding-top: 10px;
+  }
+
+  /* ------FOOTER------- */
+  #pied #contenu-bas .bande{ /*une petite déco apparaît dans le footer*/
+    display: block;
+    padding-top: 30px;
+  }
+
+  /* ------ACTUALITES------ */
+    #lesposts.liste{ /*en grand écran, les articles se mettent côte à côte*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  } 
+
+  #lesposts .post{/*liste des articles du blog*/
+    width: 300px;
+    margin: 20px 20px;
+  }
+
+  #lesposts.full .post{ /*les articles en page entière occupent toute la largeur*/
+    width: 90%;
+    margin:20px auto;
+    text-align: justify;
+  }
+
+  /* ------CONTACT */
+  /* Formulaire de contact */
+  #contact #message{
+    margin: 0 100px;
+  }
+
+  #contact #message #msg{
+    margin-right: 100px;
+  }
+
+  /* Map */
+  #contact #carte .map{ /*La carte est plus grande*/
+    height: 500px;
+  }
+
+}
+
+/* N° 3*/
+@media screen and (min-width:1201px){
+
+  .container{
+    width: 80%;
+    max-width:1200px;
+    margin:0 auto;
+  }
+
+  /* ------HEADER------ */
+  #header-top #bandeau-header{ /*le bandeau de nav reprend sa taille originale*/
+    height: 130px;
+  }
+
+  /* Formulaire de contact */
+  #contact #message #msg{
+    width: 60%;
+  }
+
+}
