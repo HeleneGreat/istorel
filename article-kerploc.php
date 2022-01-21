@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
 
-<main id="contenu">
+<main id="contenu">loololololololo
 
     <section id="lesposts" class="full container">
         <div class="retour">
