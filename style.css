@@ -737,6 +737,12 @@ a.back-to-top{
     text-align: center;
   }
 
+  #header-top #bandeau-header #menu-flex ul a.active, 
+  #header-top #bandeau-header #menu-flex ul a:hover {
+    background-color: #666;
+    color: white;
+  }
+
   /* ------INDEX------ */
   #bienvenue figure{ /*une image d'illustration est ajoutée en page d'accueil*/
     display: block;

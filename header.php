@@ -47,13 +47,13 @@
       </nav>
 
       <nav id="menu-flex" class="container">
-        <ul>
-          <li><a href="index.php">Accueil</a></li>
-          <li><a href="actualite.php">Nos actualités</a></li>
-          <li><a href="#">#Revues publiées</a></li>
-          <li><a href="#">#Vie communale</a></li>
-          <li><a href="#">#Morts pour la France</a></li>
-          <li><a href="contact.php">Contact</a></li>
+        <ul id="nav-active">
+          <li class="li"><a href="index.php">Accueil</a></li>
+          <li class="li"><a href="actualite.php">Nos actualités</a></li>
+          <li class="li"><a href="#">#Revues publiées</a></li>
+          <li class="li"><a href="#">#Vie communale</a></li>
+          <li class="li"><a href="#">#Morts pour la France</a></li>
+          <li class="li"><a href="contact.php">Contact</a></li>
         </ul>
       </nav>
     </div>

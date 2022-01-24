@@ -1,4 +1,7 @@
-<?php include('header.php'); ?>
+<?php include('header.php'); 
+require_once('class/Article.php');
+require_once('class/creationArticles.php');
+?>
 
 <main id="contenu">
 
@@ -23,6 +26,30 @@
             </nav>
         </header>
         
+
+
+
+<!-- Boucle sur les articles de la class Article-->
+
+    <?php foreach($allArticles as $allArticle) {?>
+        <article class="post tout <?= $allArticle->getCategory() ?>">
+            <figure class="imgsize">
+                <img src="<?= $allArticle->getImage() ?>" alt="<?= $allArticle->getTitle() ?>">
+            </figure>
+            <div class="text-post">
+                <h2><?= $allArticle->getTitle() ?></h2>
+                <time datetime="<?= $allArticle->date_number() ?>"><?= $allArticle->date_written() ?></time>
+                <p><?= $allArticle->getAccroche() ?></p>
+                <a href="<?= $allArticle->getUrl() ?>">+ d'infos</a>
+            </div>
+        </article>
+    <?php }; ?>
+
+
+
+
+
+<!--  
         <article class="post tout sortie">
             <figure class="imgsize">
                 <img src="images/post-sortie-kerploc.jpg" alt="Sortie à Kerploc">
@@ -94,6 +121,7 @@
                 <a href="article-iode.php">+ d'infos</a>
             </div>
         </article>
+        -->
     </section>
 </main>
 

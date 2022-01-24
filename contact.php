@@ -33,8 +33,14 @@
                         <p><input type="email" id="email" placeholder="Ex: j-chirac@correze.fr"></p>
                         <p><label for="tel">Votre n° de téléphone :</label></p>
                         <p><input type="tel" id="tel" placeholder="Ex: 02 97 33 33 33"></p>
+
+                    
                         <p><label for="direction">Votre adresse :</label></p>
                         <p><input type="text" id="direction" placeholder="Ex: 4 rue du pain 56100 BAUD"></p>
+
+                        <input type="text" id="insert"/>
+                        <ul id="wrapper"></ul>
+
                     </div>
                 </div>
                 <p>Vous préférez être recontacté par:</p>

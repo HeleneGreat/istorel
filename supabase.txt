@@ -1,0 +1,9 @@
+
+
+URL 
+https://cwipdiuynanqtlkjqmua.supabase.co
+
+
+Project API keys
+anon public
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjQyNzYyMzkzLCJleHAiOjE5NTgzMzgzOTN9.nnkUj0zk9DuBPQ33vBZv4x6pgvp2aZEbx7ZlfQ8V6pA

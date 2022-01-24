@@ -41,6 +41,8 @@
 <script src="scripts/menu-burger.js"></script>
 <script src="scripts/jquery-1.9.0.min.js"></script>
 <script src="scripts/menu-categorie.js"></script>
+<script src="scripts/nav-active.js"></script>
+<script src="scripts/api-adress.js"></script>
 
 
 </body>
