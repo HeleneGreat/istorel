@@ -514,13 +514,21 @@ a.back-to-top{
   margin-left: 20px;
 }
 
+#contact #message input.textarea{ /*longueur des zones à remplir*/
+  width: 300px;
+}
+
+#contact #message #wrapper li{ /*la liste des adresses de l'API*/
+  font-size: 1rem;
+}
+
 #contact #message .required{ /*les astérix obligatoires*/
   color:red;
   font-size: 1.6rem;
 }
 
 #contact #message input:focus{ /*la zone de formulaire qui est sélectionnée*/
-  box-shadow: 0px 0px 5px var(--bleu-teal) inset;
+  box-shadow: 0px 0px 5px var(--gris-anthracite) inset;
 }
 
 #contact #message li{ /*les checkbox avec les moyens de contact*/
@@ -674,11 +682,11 @@ a.back-to-top{
   /* ------CONTACT------ */
   #contact #message .row-contact{ /*le formulaire de contact s'affiche en 2 colonnes*/
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
   }
 
-  #contact #message ul{ /*les moyens de contact s'affichent sur une seule ligne*/
+  #contact #message ul#moyen-contact{ /*les moyens de contact s'affichent sur une seule ligne*/
     display: flex;
   }
   

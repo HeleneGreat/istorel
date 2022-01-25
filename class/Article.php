@@ -2,7 +2,7 @@
 
 class Article {
 
-    private int $id;
+    // private int $id;
     private string $title;
     private array $created_at;
     private string $category;

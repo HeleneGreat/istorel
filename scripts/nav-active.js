@@ -11,9 +11,16 @@
    }
  }
 
+/*VERSION MURIEL à tester
+let links = document.getElementById("sous-menu").getElementsByTagName("a");
 
-
-
+for(let i=0; i<links.length; i++){
+    if(links[i].href == location.href){
+        links[0].classList.remove('active');
+        links[i].classList.add('active');
+        }
+    }
+*/
 
 
 /*
