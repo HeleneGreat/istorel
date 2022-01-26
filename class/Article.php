@@ -2,21 +2,31 @@
 
 class Article {
 
-    // private int $id;
+    private int $id;
     private string $title;
     private array $created_at;
     private string $category;
     private string $accroche;
     private string $image;
-    private string $url;
+    private string $fullArticle;
 
-    function __construct(string $title, array $created_at, string $category, string $accroche, string $image, string $url){
+    function __construct(int $id, string $title, array $created_at, string $category, string $accroche, string $image, string $fullArticle){
+        $this->id = $id;
         $this->title = $title;
         $this->created_at = $created_at;
         $this->category = $category;
         $this->accroche = $accroche;
         $this->image = $image;
-        $this->url = $url;
+        $this->fullArticle = $fullArticle;
+    }
+
+// ID
+    function setId (int $id){
+        $this->id = $id;
+    }
+
+    function getId (){
+        return $this->id;
     }
 
 // Title
@@ -38,22 +48,17 @@ class Article {
     }
 
 // Date de création en AAAA/MM/JJ pour la balise <time></time>
-    function date_number(){
+    function dateNumber(){
         $date = implode("-", $this->created_at) ;
         return $date ;
     }
 
 // Date de création écrite en lettres 
-    function date_written(){
+    function dateWritten(){
         $mois = ["", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
     
         return $this->created_at [2] . " " . $mois[(int)$this->created_at[1]] . " " . $this->created_at[0] ;
     }
-
-
-
-
-
 
 // Catégorie
     function setCategory (string $cat){
@@ -87,9 +92,13 @@ class Article {
         $this->url = $url;
     }
 
-    function getUrl (){
-        return "http://localhost/istorel/" . $this->url;
+    function getUrl (): string {
+        return "http://localhost/istorel/article_details.php?id=".$this->getId();
     }
     
+// Corps de l'article
+    function getFullArticle(){
+        return $this->fullArticle;
+    }
 
 }

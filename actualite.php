@@ -1,6 +1,6 @@
-<?php include('header.php'); 
-require_once('class/Article.php');
-require_once('class/creationArticles.php');
+<?php include_once('header.php'); 
+// require_once('class/Article.php');
+require_once('./class/creationArticles.php');
 ?>
 
 <main id="contenu">
@@ -25,12 +25,8 @@ require_once('class/creationArticles.php');
                 </ul>
             </nav>
         </header>
-        
-
-
 
 <!-- Boucle sur les articles de la class Article-->
-
     <?php foreach($allArticles as $allArticle) {?>
         <article class="post tout <?= $allArticle->getCategory() ?>">
             <figure class="imgsize">
@@ -38,90 +34,14 @@ require_once('class/creationArticles.php');
             </figure>
             <div class="text-post">
                 <h2><?= $allArticle->getTitle() ?></h2>
-                <time datetime="<?= $allArticle->date_number() ?>"><?= $allArticle->date_written() ?></time>
+                <time datetime="<?= $allArticle->dateNumber() ?>"><?= $allArticle->dateWritten() ?></time>
                 <p><?= $allArticle->getAccroche() ?></p>
                 <a href="<?= $allArticle->getUrl() ?>">+ d'infos</a>
+
             </div>
         </article>
     <?php }; ?>
 
-
-
-
-
-<!--  
-        <article class="post tout sortie">
-            <figure class="imgsize">
-                <img src="images/post-sortie-kerploc.jpg" alt="Sortie à Kerploc">
-            </figure>
-            <div class="text-post">
-                <h2>Sortie à Kerploc</h2>
-                <time datetime="2021-10-31">31 octobre 2021</time>
-                <p>Sortie automnale d'Istorel en presqu'île de Kerploc, sous le soleil.</p>
-                <a href="article-kerploc.php">+ d'infos</a>
-            </div>
-        </article>
-
-        <article class="post tout conf">
-            <figure class="imgsize">
-                <img src="images/post-conf-adrien.jpg" alt="Conférence au village de Saint Adrien">
-            </figure>
-            <div class="text-post">
-                <h2>Saint-Adrien en 1820</h2>
-                <time datetime="2021-10-26">26 octobre 2021</time>
-                <p>La conférence s'est bien déroulée devant une assistance fournie.</p>
-                <a href="article-adrien.php">+ d'infos</a>
-            </div>
-        </article>
-
-        <article class="post tout patri">
-            <figure class="imgsize">
-                <img src="images/post-eglise-saint-pierre.jpg" alt="Eglise Saint Pierre">
-            </figure>
-            <div class="text-post">
-                <h2>Journée du Patrimoine 2021</h2>
-                <time datetime="2021-09-28">28 septembre 2021</time>
-                <p>Découverte de l'église St Pierre avec Istorel lors des journées du patrimoine.</p>
-                <a href="article-patrimoine21.php">+ d'infos</a>
-            </div>
-        </article>
-
-        <article class="post tout patri">
-            <figure class="imgsize">
-                <img src="images/post-fete-nationale.jpeg" alt="Cérémonie du 14 juillet 2021">
-            </figure>
-            <div class="text-post">
-                <h2>Fête nationale</h2>
-                <time datetime="2021-07-14">14 juillet 2021</time>
-                <p>Hommage national aux morts pour la France.</p>
-                <a href="article-fete21.php">+ d'infos</a>
-            </div>
-        </article>
-
-        <article class="post tout sortie">
-            <figure class="imgsize">
-                <img src="images/post-sortie-locpen.jpg" alt="Sortie à Locpen">
-            </figure>
-            <div class="text-post">
-                <h2>Sortie à Locpen</h2>
-                <time datetime="2021-06-24">24 juin 2021</time>
-                <p>Pour notre sortie d'été, nous sommes allés à Pen Ker et Locpen</p>
-                <a href="article-locpen.php">+ d'infos</a>
-            </div>
-        </article>
-
-        <article class="post tout patri">
-            <figure class="imgsize">
-                <img src="images/post-iode.jpg" alt="Recherches sur l'usine d'iode">
-            </figure>
-            <div class="text-post">
-                <h2>Recherches sur l'usine d'iode de Kerpen</h2>
-                <time datetime="2021-02-06">06 février 2021</time>
-                <p>Voici la restitution de nos recherches les plus récentes.</p>
-                <a href="article-iode.php">+ d'infos</a>
-            </div>
-        </article>
-        -->
     </section>
 </main>
 

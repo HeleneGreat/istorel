@@ -24,7 +24,7 @@
                     <input type="radio" name="civilite" id="civilite" value="Mme">
                     <label for="civilite">Mme</label></p>
                     <p><label for="nom">Votre nom : <span class="required">*</span></label></p>
-                    <p><input type="text" name="nom" id="nom" class= "textarea" placeholder="Tapea votre nom" required></p>
+                    <p><input type="text" name="nom" id="nom" class= "textarea" placeholder="Tapez votre nom" required></p>
                     <p><label for="prenom">Votre prénom : <span class="required">*</span></label></p>
                     <p><input type="text" name="prenom" id="prenom" class= "textarea" placeholder="Tapez votre prénom" required></p>
                 </div>
@@ -60,8 +60,9 @@
             <textarea name="message" id="msg" placeholder="Tapez votre message"></textarea></p>
             <input type="checkbox" name="rgpd" id="rgpd" required>
             <label for="rgpd" class="rgpd"><span class="required">*</span> En cliquant sur "Envoyer", vous autorisez ce site à conserver les données personnelles transmises via ce formulaire. Aucune exploitation commerciale ne sera faite des données conservées. Voir nos <a href="#">Mentions légales</a>.</label>
-            <p><input type="reset" value="Effacer" class="effacer">
-            <input type="submit" value="Envoyer" class="envoyer"></p>
+            
+            <p><input type="reset" value="Effacer" class="effacer" id="btn-submit">
+            <input type="submit" value="Envoyer" class="envoyer" disabled></p>
         </form>
     </div>
     <div id="nous-trouver">

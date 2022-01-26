@@ -45,7 +45,7 @@ adresse.addEventListener('input', function() {
 let adresse = document.querySelector("#adresse");
 let wrapper = document.getElementById('wrapper');
 
-adresse.addEventListener('input', function(){
+adresse.addEventListener('input', function () {
 
     if (adresse.value.length > 0) {
 
@@ -56,22 +56,22 @@ adresse.addEventListener('input', function(){
                 console.log(result);
                 wrapper.innerHTML = "";
                 if (result.length) {
-                    for (let i = 0; i < result.length; i++){
+                    for (let i = 0; i < result.length; i++) {
                         let affichage = document.createElement("li");
 
-                        affichage.innerText = result[i].properties.label ;
-wrapper.appendChild(affichage);
-                    affichage.addEventListener('click', displayAdresse);
+                        affichage.innerText = result[i].properties.label;
+                        wrapper.appendChild(affichage);
+                        affichage.addEventListener('click', displayAdresse);
 
-                        }
-                    
+                    }
+
 
                     function displayAdresse() {
                         adresse.value = affichage.innerText;
                         wrapper.innerHTML = "";
                     }
                 }
-                
+
             })
     } else {
         wrapper.innerHTML = "";

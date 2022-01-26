@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,10 +7,9 @@
     <title>Istorel, l'association des historiens amateurs de Kerploc</title>
     <link rel="shortcut icon" type="image/png" href="images/logo-istorel.png"/>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"> 
 </head>
+
 <body>
   <div id="ancre-back-to-top"></div>
     
@@ -36,7 +33,7 @@
           <div id="burger"></div>
           <div id="menu">
             <ul>
-              <li><a href="index.php">Accueil</a></li>
+              <li><a href="index.php" class="active">Accueil</a></li>
               <li><a href="actualite.php">Nos actualités</a></li>
               <li><a href="#">#Revues publiées</a></li>
               <li><a href="#">#Vie communale</a></li>
@@ -48,12 +45,12 @@
 
       <nav id="menu-flex" class="container">
         <ul id="nav-active">
-          <li class="li"><a href="index.php">Accueil</a></li>
-          <li class="li"><a href="actualite.php">Nos actualités</a></li>
-          <li class="li"><a href="#">#Revues publiées</a></li>
-          <li class="li"><a href="#">#Vie communale</a></li>
-          <li class="li"><a href="#">#Morts pour la France</a></li>
-          <li class="li"><a href="contact.php">Contact</a></li>
+          <li><a href="index.php" class="active">Accueil</a></li>
+          <li><a href="actualite.php">Nos actualités</a></li>
+          <li><a href="#">#Revues publiées</a></li>
+          <li><a href="#">#Vie communale</a></li>
+          <li><a href="#">#Morts pour la France</a></li>
+          <li><a href="contact.php">Contact</a></li>
         </ul>
       </nav>
     </div>

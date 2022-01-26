@@ -1,22 +1,14 @@
-!DOCTYPE html>
-<html>
-<head>
-<style type=text/css>
+<?php include('header.php'); ?>
 
-p {    color: blue;    
-font-weight: 900;    
-font-size: 20px;    
-font-family: Helvetica, Arial, sans-serif;    
-}
+<main id="contenu">
 
-</style>
-</head>
+<div id="error" class="container">
+    <h4>Erreur Page 404</h4><br>
+    <p>Oups, il semble que vous vous soyez perdu.</p>
+    <p>Vous pouvez utiliser le menu ci-dessus pour retrouver votre chemin.</p>
+    <img src="images/lost-404.jpg" alt="Lost">
+</div>
 
-<body>
+</main>
 
-<p>This was a web page for an organization that used to exist. This organization no longer exists as it has been replaced with a new organization to teach surf kids the values and love of the ocean. The new site is: https://www.pleasurepointsurfclub.com/
-<br><br> 
-If you came upon this page by mistake, try checking the URL in your web browser.</p>
-
-</body>
-</html>
+<?php include('footer.php'); ?>

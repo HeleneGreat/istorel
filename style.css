@@ -17,6 +17,7 @@ Mobile first :
   - Formulaire de contact
   - Nous trouver
   - Map
+- Page 404
 
 Media queries :
 1- min 769px
@@ -235,6 +236,30 @@ a.back-to-top{
 
 #menu.active{
   display: block !important;
+}
+
+#header-top #bandeau-header a{
+  padding:  3px 10px ;
+
+}
+
+#header-top #bandeau-header #menu-flex ul a.active, 
+#header-top #bandeau-header #menu-flex ul a:hover,
+#header-top #bandeau-header #menuprincipal ul a.active, 
+#header-top #bandeau-header #menuprincipal ul a:hover {
+  background-color: white;
+  border-radius: 5px;
+  padding:  3px 10px ;
+}
+
+#header-top #bandeau-header #menu-flex ul a.active, 
+#header-top #bandeau-header #menu-flex ul a:hover{
+  color: var(--bleu-teal);
+}
+
+#header-top #bandeau-header #menuprincipal ul a.active, 
+#header-top #bandeau-header #menuprincipal ul a:hover {
+  color: var(--gris-anthracite);
 }
 
 
@@ -501,10 +526,12 @@ a.back-to-top{
 #contact #message h4{
   margin-top: 10px;
   font-size: 1.6rem;
+  color: var(--bleu-teal);
+  margin-bottom: 5px;
 }
 
 #contact #message p{
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-top:5px;
 }
 
@@ -621,6 +648,22 @@ a.back-to-top{
   border: 1px solid var(--gris-anthracite);
 }
 
+/* ------Page 404------ */
+#error h4{
+  font-size: 2rem;
+  padding:15px 0;
+  color: var(--bleu-teal);
+}
+
+#error p{
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+}
+
+#error img{
+  width: 100%;
+}
+
 
 /* ------MEDIA QUERIES------ */
 /* N° 1*/
@@ -729,6 +772,8 @@ a.back-to-top{
 
   #header-top #bandeau-header #menu-flex{ /* le menu normal apparaît */
     display: block;
+    position:relative;
+    top: -3px;
   }
 
   #header-top #bandeau-header #menu-flex ul{
@@ -741,15 +786,9 @@ a.back-to-top{
     color: white;
     font-weight: bold;
     font-size: 1.2rem;
-    margin-left: 10px;
     text-align: center;
   }
 
-  #header-top #bandeau-header #menu-flex ul a.active, 
-  #header-top #bandeau-header #menu-flex ul a:hover {
-    background-color: #666;
-    color: white;
-  }
 
   /* ------INDEX------ */
   #bienvenue figure{ /*une image d'illustration est ajoutée en page d'accueil*/
